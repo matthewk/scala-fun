@@ -1,1 +1,5 @@
 .idea
+target
+scala-fun.iml
+scala-fun.ipr
+scala-fun.iws
