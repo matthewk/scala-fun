@@ -27,20 +27,11 @@ object DatabaseManager {
       // create the statement, and run the select query
       val statement = connection.createStatement()
 
-      val resultSet = statement.executeUpdate("CREATE TABLE test (id number)")
+      val resultSet = statement.executeUpdate("CREATE TABLE track (id number)")
 
-      //val resultSet = statement.executeQuery("SELECT host, user FROM user")
-      //      while ( resultSet.next() ) {
-      //        val host = resultSet.getString("host")
-      //        val user = resultSet.getString("user")
-      //        println("host, user = " + host + ", " + user)
-      //      }
-      //    } catch {
-      //      case e => e.printStackTrace
-      //    }
       connection.close()
     } catch {
-          case e => e.printStackTrace
+          case e : Throwable => e.printStackTrace
     }
   }
 

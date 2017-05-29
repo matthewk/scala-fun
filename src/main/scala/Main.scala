@@ -11,20 +11,11 @@ import org.json4s.jackson.JsonMethods._
 object Main {
 
   val BaseDeezerAPIURL: String = "https://api.deezer.com/track/"
+  val BenzinaOgoshiTrackId: String = "14310750";
 
   def main(args: Array[String]): Unit = {
 
-    val jsValue = parse("""{"name":"john", "age": 28}""")
-
-    // json4s requires you to have this in scope to call extract
-    implicit val formats = DefaultFormats
-
-    val p = jsValue.extract[Person]
-    // p is Person("john",28)
-
-    println(p.name)
-
-    val track = getTrackDetails("14310750")
+    val track = getTrackDetails(BenzinaOgoshiTrackId)
     println(track.title)
     println(track.rank)
 
